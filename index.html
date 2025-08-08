@@ -1,399 +1,55 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <!-- 모바일 최적화를 위한 viewport 설정 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내면의 동물 찾기</title>
-  <!-- Google AdSense 스크립트 (한 번만 추가하면 됩니다) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7990580164303240" crossorigin="anonymous"></script>
-  <style>
-    /* 기본 스타일 */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
-      background: #fff;
-      padding: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-    h1, h2 {
-      text-align: center;
-      margin: 20px 0;
-    }
-    p {
-      text-align: center;
-      line-height: 1.6;
-      margin: 20px 0;
-    }
-    .hidden {
-      display: none;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #3498db;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 10px;
-      font-size: 1em;
-    }
-    .btn:hover {
-      background: #2980b9;
-    }
-    .question {
-      font-size: 1.3em;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-    .option {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 15px;
-      background-color: #e7f3ff;
-      border: 1px solid #3498db;
-      border-radius: 5px;
-      font-size: 1em;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .option:hover {
-      background-color: #d0e9ff;
-    }
-    .progress {
-      margin: 25px 0;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-    /* 광고 영역 스타일 */
-    .ad-placeholder {
-      margin: 30px 0;
-      text-align: center;
-    }
-    .result-image {
-      width: 100%;
-      max-width: 300px;
-      display: block;
-      margin: 20px auto;
-    }
-    #result-description {
-      text-align: left;
-      margin: 20px;
-      font-size: 1em;
-      line-height: 1.6;
-      color: #444;
-    }
-    #result-celebrities {
-      text-align: left;
-      margin: 20px;
-      font-size: 0.95em;
-      line-height: 1.6;
-      color: #444;
-      border-top: 1px solid #ddd;
-      padding-top: 15px;
-    }
-    
-    /* 모바일 최적화를 위한 미디어 쿼리 */
-    @media (max-width: 600px) {
-      .container {
-        margin: 20px;
-        padding: 15px;
-      }
-      h1 {
-        font-size: 1.6em;
-      }
-      h2 {
-        font-size: 1.4em;
-      }
-      p {
-        font-size: 0.95em;
-        margin: 15px 0;
-      }
-      .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-        margin: 8px;
-      }
-      .question {
-        font-size: 1.1em;
-        margin-bottom: 20px;
-      }
-      .option {
-        padding: 12px;
-        font-size: 0.95em;
-        margin: 8px 0;
-      }
-      .progress {
-        font-size: 1em;
-        margin: 20px 0;
-      }
-      #result-description, #result-celebrities {
-        margin: 10px;
-        font-size: 0.9em;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 기반 기부 플랫폼</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        #data-display {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ecf0f1;
+            border-left: 5px solid #3498db;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <!-- 메인 페이지: 테스트 시작 화면 -->
-    <div id="main-page">
-      <!-- 최상단에 "처음사진.webp" 이미지 추가 -->
-      <img src="images/처음사진.webp" alt="테스트 시작 이미지" style="max-width:100%; display:block; margin: 0 auto 20px;">
-      <h1>내면의 동물 찾기</h1>
-      <p>
-        당신 안에 숨겨진 본능을 발견해보세요! 몇 가지 질문에 답하면,<br>
-        당신에게 가장 잘 맞는 동물을 찾아드립니다.
-      </p>
-      <div style="text-align: center;">
-        <button id="start-btn" class="btn">지금 시작하기</button>
-      </div>
+    <div class="container">
+        <h1>AI 기반 기부 플랫폼</h1>
+        <p>AI와 전문가의 협업으로 가장 효율적인 기부를 실행합니다.</p>
+
+        <div id="data-display">
+            <h2>분석 데이터</h2>
+            <p>AI 애널리스트의 분석 데이터가 이곳에 표시됩니다.</p>
+            <!-- 향후 데이터가 동적으로 여기에 삽입됩니다. -->
+        </div>
+
+        <div id="decision-panel" style="margin-top: 30px;">
+            <h2>전문가 결정 패널</h2>
+            <p>데이터를 기반으로 한 최종 투자 결정이 이곳에서 이루어집니다.</p>
+            <!-- 향후 전문가용 입력 폼이 여기에 추가됩니다. -->
+        </div>
     </div>
-
-    <!-- 퀴즈 페이지 -->
-    <div id="quiz-page" class="hidden">
-      <div class="progress" id="progress"></div>
-      <div class="question" id="question-text"></div>
-      <div id="options"></div>
-      <!-- 퀴즈 페이지 광고 영역 (AdSense 광고 코드 삽입) -->
-      <div class="ad-placeholder">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-7990580164303240"
-             data-ad-slot="1111111111"  <!-- 실제 슬롯 번호로 교체 -->
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-    </div>
-
-    <!-- 결과 페이지 -->
-    <div id="result-page" class="hidden">
-      <h1>당신의 내면의 동물은?</h1>
-      <img id="result-image" class="result-image" src="" alt="결과 이미지">
-      <h2 id="result-name"></h2>
-      <!-- 긴 상세 설명 -->
-      <p id="result-description"></p>
-      <!-- 같은 성격을 가진 유명인 정보 -->
-      <div id="result-celebrities"></div>
-      <div style="text-align: center;">
-        <button id="restart-btn" class="btn">테스트 다시하기</button>
-        <button id="share-btn" class="btn">결과 공유하기</button>
-      </div>
-      <!-- 결과 페이지 광고 영역 (AdSense 광고 코드 삽입) -->
-      <div class="ad-placeholder">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-7990580164303240"
-             data-ad-slot="2222222222"  <!-- 실제 슬롯 번호로 교체 -->
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // 질문 데이터
-    const questions = [
-      {
-        question: "어려운 상황에서 당신의 대처 방식은?",
-        options: [
-          { text: "냉정하게 상황을 분석하고 해결책을 찾는다.", scores: { owl: 1 } },
-          { text: "직접 문제에 맞서 싸운다.", scores: { lion: 1 } },
-          { text: "동료들과 함께 해결책을 모색한다.", scores: { wolf: 1 } },
-          { text: "재치 있게 상황을 피하거나 전환한다.", scores: { fox: 1 } }
-        ]
-      },
-      {
-        question: "친구들과의 모임에서 나는?",
-        options: [
-          { text: "모두를 이끄는 리더.", scores: { lion: 1 } },
-          { text: "분위기를 부드럽게 만드는 분위기 메이커.", scores: { dolphin: 1 } },
-          { text: "조용히 관찰하며 의견을 제시한다.", scores: { owl: 1 } },
-          { text: "재치있는 농담으로 분위기를 띄운다.", scores: { fox: 1 } }
-        ]
-      },
-      {
-        question: "혼자만의 시간을 가질 때 나는?",
-        options: [
-          { text: "내면을 돌아보며 깊은 생각에 잠긴다.", scores: { owl: 1 } },
-          { text: "자연 속에서 산책하며 자유를 만끽한다.", scores: { dolphin: 1 } },
-          { text: "스스로를 단련하며 강해진다.", scores: { lion: 1 } },
-          { text: "새로운 아이디어로 창의력을 발휘한다.", scores: { fox: 1 } }
-        ]
-      },
-      {
-        question: "위기 상황이 닥쳤을 때 나의 반응은?",
-        options: [
-          { text: "상황을 냉정하게 분석하고 대안을 찾는다.", scores: { owl: 1 } },
-          { text: "즉각적으로 행동에 나선다.", scores: { lion: 1 } },
-          { text: "주변 사람들과 협력하여 문제를 해결한다.", scores: { wolf: 1 } },
-          { text: "창의적인 방법으로 문제를 해결한다.", scores: { dolphin: 1 } }
-        ]
-      },
-      {
-        question: "사람들과의 관계에서 나는?",
-        options: [
-          { text: "깊은 유대감을 형성하며 신뢰를 쌓는다.", scores: { wolf: 1 } },
-          { text: "상대방에게 진심을 전하며 친밀함을 느낀다.", scores: { dolphin: 1 } },
-          { text: "자신감 있고 당당하게 나선다.", scores: { lion: 1 } },
-          { text: "상대방의 마음을 읽으며 적절한 거리를 유지한다.", scores: { owl: 1 } }
-        ]
-      }
-    ];
-
-    // 결과 정보
-    const results = {
-      lion: {
-        name: "사자",
-        description: "리더십, 강인함, 용기의 상징입니다.",
-        detailed: "사자는 태양처럼 빛나는 리더의 상징입니다. 당신은 대담하고 용감하며, 책임감을 가지고 팀을 이끄는 리더십을 지니고 있습니다. 어려움 속에서도 흔들리지 않고 목표를 향해 나아가며, 주변 사람들에게 강한 영감을 줍니다. 따뜻한 보호 본능과 깊은 배려심도 갖추고 있어, 때로는 엄격하더라도 그 이면에는 진심 어린 사랑이 숨어 있습니다. 이런 강인함과 리더십 덕분에 어떤 도전에도 맞설 수 있는 용기를 지니고 있습니다.",
-        celebrities: "바락 오바마, 스티브 잡스, 유재석",
-        image: "images/lion.webp"
-      },
-      wolf: {
-        name: "늑대",
-        description: "충성심, 팀워크, 직관력의 상징입니다.",
-        detailed: "늑대는 강한 충성심과 팀워크의 상징으로, 혼자보다 함께 할 때 더욱 빛납니다. 당신은 동료들과 깊은 신뢰를 바탕으로 유대를 형성하며, 상황의 미묘한 변화를 빠르게 감지하는 뛰어난 직관력을 가지고 있습니다. 이러한 특성 덕분에 어려운 문제도 함께 해결해 나갈 수 있는 능력을 지니고 있으며, 주변 사람들과의 협력을 통해 공동체 내에서 중요한 역할을 수행합니다.",
-        celebrities: "마이클 조던, 맷 데이먼, 조지 클루니",
-        image: "images/wolf.webp"
-      },
-      owl: {
-        name: "부엉이",
-        description: "지혜, 신중함, 관찰력의 상징입니다.",
-        detailed: "부엉이는 깊은 지혜와 탁월한 통찰력을 가진 동물입니다. 당신은 모든 상황을 차분히 관찰하며, 남들이 놓치는 세밀한 부분까지도 꿰뚫어봅니다. 분석력과 신중함 덕분에 복잡한 문제를 해결하는 데 큰 도움을 받고, 자기 성찰을 통해 지속적으로 성장합니다. 내면의 소리에 귀 기울이며 더 나은 미래를 꿈꾸는 당신의 모습은 주변 사람들에게도 깊은 인상을 남깁니다.",
-        celebrities: "알베르트 아인슈타인, 스티븐 호킹, 유시민",
-        image: "images/owl.webp"
-      },
-      dolphin: {
-        name: "돌고래",
-        description: "사교적, 유머러스, 창의성의 상징입니다.",
-        detailed: "돌고래는 활기차고 사교적인 성격의 상징입니다. 당신은 언제나 밝은 에너지를 발산하며, 주변 사람들에게 웃음과 희망을 전달합니다. 창의적인 사고와 유연한 대처 능력 덕분에 어려움을 즐겁게 극복하고, 혁신적인 아이디어로 새로운 해결책을 제시합니다. 사람들과의 원활한 소통을 통해 팀워크와 공동체 의식을 높이며 사회적 관계에서도 큰 역할을 수행합니다.",
-        celebrities: "오프라 윈프리, 엘렌 디제너러스, 윌 스미스",
-        image: "images/dolphin.webp"
-      },
-      fox: {
-        name: "여우",
-        description: "기민함, 재치, 독창성의 상징입니다.",
-        detailed: "여우는 기민함과 재치, 그리고 독창성의 상징입니다. 당신은 어려운 상황에서도 빠르게 상황을 파악하고, 창의적인 방법으로 문제를 해결하는 능력을 지니고 있습니다. 변화에 민감하게 반응하며 늘 새로운 가능성을 모색하는 당신의 모습은 독립적이고 혁신적입니다. 때로는 신비로운 매력과 함께 스스로의 길을 개척하며, 그 속에 숨겨진 깊은 통찰력과 문제 해결 능력이 주변에 큰 영감을 줍니다.",
-        celebrities: "오스카 와일드, 리처드 브랜슨, 일론 머스크",
-        image: "images/fox.webp"
-      }
-    };
-
-    let currentQuestion = 0;
-    const scores = { lion: 0, wolf: 0, owl: 0, dolphin: 0, fox: 0 };
-
-    // 페이지 요소 선택
-    const mainPage = document.getElementById("main-page");
-    const quizPage = document.getElementById("quiz-page");
-    const resultPage = document.getElementById("result-page");
-    const startBtn = document.getElementById("start-btn");
-    const restartBtn = document.getElementById("restart-btn");
-    const shareBtn = document.getElementById("share-btn");
-    const questionText = document.getElementById("question-text");
-    const optionsDiv = document.getElementById("options");
-    const progressDiv = document.getElementById("progress");
-    const resultImage = document.getElementById("result-image");
-    const resultName = document.getElementById("result-name");
-    const resultDescription = document.getElementById("result-description");
-    const resultCelebrities = document.getElementById("result-celebrities");
-
-    // 이벤트 리스너 설정
-    startBtn.addEventListener("click", startQuiz);
-    restartBtn.addEventListener("click", restartQuiz);
-    shareBtn.addEventListener("click", shareResult);
-
-    function startQuiz() {
-      mainPage.classList.add("hidden");
-      quizPage.classList.remove("hidden");
-      currentQuestion = 0;
-      for (let key in scores) {
-        scores[key] = 0;
-      }
-      showQuestion();
-    }
-
-    function showQuestion() {
-      const current = questions[currentQuestion];
-      questionText.textContent = current.question;
-      optionsDiv.innerHTML = "";
-      progressDiv.textContent = `질문 ${currentQuestion + 1} / ${questions.length}`;
-      current.options.forEach(option => {
-        const btn = document.createElement("button");
-        btn.textContent = option.text;
-        btn.className = "option";
-        btn.addEventListener("click", () => selectOption(option.scores));
-        optionsDiv.appendChild(btn);
-      });
-    }
-
-    function selectOption(selectedScores) {
-      for (let key in selectedScores) {
-        scores[key] += selectedScores[key];
-      }
-      currentQuestion++;
-      if (currentQuestion < questions.length) {
-        showQuestion();
-      } else {
-        showResult();
-      }
-    }
-
-    function showResult() {
-      quizPage.classList.add("hidden");
-      resultPage.classList.remove("hidden");
-      let maxScore = -1;
-      let resultAnimal = "";
-      for (let animal in scores) {
-        if (scores[animal] > maxScore) {
-          maxScore = scores[animal];
-          resultAnimal = animal;
-        }
-      }
-      const result = results[resultAnimal];
-      resultImage.src = result.image;
-      resultImage.alt = result.name;
-      resultName.textContent = result.name;
-      resultDescription.textContent = result.detailed;
-      resultCelebrities.textContent = "같은 성격을 가진 유명인: " + result.celebrities;
-    }
-
-    function restartQuiz() {
-      resultPage.classList.add("hidden");
-      mainPage.classList.remove("hidden");
-    }
-
-    function shareResult() {
-      const shareData = {
-        title: "내면의 동물 찾기 테스트",
-        text: `나의 내면의 동물은 ${resultName.textContent}! ${resultDescription.textContent}`,
-        url: window.location.href
-      };
-      if (navigator.share) {
-        navigator.share(shareData)
-          .then(() => console.log("공유 성공"))
-          .catch((err) => console.error("공유 실패:", err));
-      } else {
-        alert("이 브라우저는 공유 기능을 지원하지 않습니다.");
-      }
-    }
-  </script>
 </body>
 </html>
