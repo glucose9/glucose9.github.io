@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImpactFlow - 데이터 기반 기부 플랫폼</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="assets/logo.svg" alt="ImpactFlow Logo">
+                <span>ImpactFlow</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#how-it-works">작동 방식</a>
+                <a href="#methodology">우리의 방법론</a>
+                <a href="#contact">문의</a>
+            </nav>
+            <button class="cta-button">기부하기</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>데이터로 증명하는 가장 효과적인 기부</h1>
+                <p>우리는 QALY, DALY 지표를 분석하여 당신의 기부금이 가장 큰 영향력을 발휘할 곳을 찾습니다.</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="dashboard-container">
+                <!-- Left Side: Impact Display -->
+                <div class="impact-dashboard">
+                    <h2>Impact Dashboard</h2>
+                    <div class="impact-card">
+                        <h3>총 누적 기부액</h3>
+                        <p class="impact-number">₩12,345,678</p>
+                    </div>
+                    <div class="impact-card">
+                        <h3>예상 DALYs 확보</h3>
+                        <p class="impact-number">45.2</p>
+                        <span>(1 DALY = 1년의 건강한 삶)</span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Action Panels -->
+                <div class="action-panels">
+                    <div id="funding-status" class="card">
+                        <h2>자금 현황</h2>
+                        <div class="status-display">
+                            <strong>총 기부 가능 금액:</strong>
+                            <span id="total-funds-display">0원</span>
+                        </div>
+                        <div class="funding-controls">
+                            <input type="number" id="add-funds-input" placeholder="금액 입력" min="0">
+                            <button type="button" id="add-funds-btn">자금 추가</button>
+                        </div>
+                    </div>
+
+                    <div id="decision-panel" class="card">
+                        <h2>전문가 결정 패널</h2>
+                        <form id="portfolio-form">
+                            <div id="portfolio-entries">
+                                <div class="portfolio-entry">
+                                    <input type="text" placeholder="자선단체 이름" class="charity-name" required>
+                                    <input type="number" placeholder="비율 (%)" class="allocation" min="0" max="100" required>
+                                </div>
+                            </div>
+                            <div class="portfolio-actions">
+                                <button type="button" id="add-entry-btn">+ 항목 추가</button>
+                                <button type="submit" id="submit-portfolio-btn">포트폴리오 승인</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology" class="methodology-section">
+            <h2>우리의 접근 방식</h2>
+            <div class="methodology-container">
+                <div class="method-card">
+                    <img src="assets/icon-chart.svg" alt="Analysis Icon" class="method-icon">
+                    <h3>데이터 기반 분석</h3>
+                    <p>GiveWell, IHME 등의 연구를 바탕으로 가장 비용 효율적인 기부처를 지속적으로 분석합니다.</p>
+                </div>
+                <div class="method-card">
+                    <img src="assets/icon-briefcase.svg" alt="Portfolio Icon" class="method-icon">
+                    <h3>전문가 포트폴리오</h3>
+                    <p>분석 결과를 토대로, 분야별 전문가가 최적의 기부 포트폴리오를 구성하고 제안합니다.</p>
+                </div>
+                <div class="method-card">
+                    <img src="assets/icon-shield.svg" alt="Transparency Icon" class="method-icon">
+                    <h3>투명한 실행</h3>
+                    <p>승인된 포트폴리오는 즉시 실행되며, 모든 기부 과정과 결과는 투명하게 공개됩니다.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer-container">
+        <p>&copy; 2025 ImpactFlow. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">이용약관</a>
+            <a href="#">개인정보 처리방침</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

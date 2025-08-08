@@ -1,0 +1,224 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --light-gray: #f4f7f6;
+    --medium-gray: #bdc3c7;
+    --dark-gray: #7f8c8d;
+    --card-bg-color: #ffffff;
+    --font-family: 'Noto Sans KR', sans-serif;
+    --box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: var(--dark-gray);
+}
+
+/* --- Header --- */
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+.main-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.cta-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.85));
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+.hero-content h1 {
+    font-size: 2.8em;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.hero-content p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Dashboard Section --- */
+.dashboard-section {
+    padding: 60px 40px;
+    background-color: var(--light-gray);
+}
+.dashboard-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.impact-dashboard {
+    flex: 1;
+}
+.action-panels {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.card, .impact-card {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+h2 {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.impact-card h3 {
+    font-size: 1.1em;
+    color: var(--dark-gray);
+    margin-top: 0;
+}
+.impact-card .impact-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+.impact-card span {
+    font-size: 0.9em;
+    color: #95a5a6;
+}
+.impact-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- Form & Controls Styling (inside cards) --- */
+#funding-status .funding-controls, .portfolio-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+#funding-status .funding-controls input {
+    flex-grow: 1;
+}
+input[type="text"], input[type="number"] {
+    padding: 12px;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-family: var(--font-family);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+.portfolio-entry {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.portfolio-entry .charity-name { flex: 3; }
+.portfolio-entry .allocation { flex: 1; }
+
+/* --- Methodology Section --- */
+.methodology-section {
+    text-align: center;
+    padding: 80px 40px;
+    background-color: #fff;
+}
+.methodology-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+.method-card {
+    flex: 1;
+    padding: 20px;
+}
+.method-icon {
+    height: 50px;
+    margin-bottom: 20px;
+    color: var(--primary-color); /* For SVG stroke */
+}
+.method-card h3 {
+    font-size: 1.3em;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* --- Footer --- */
+.main-footer-container {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.footer-links a:hover {
+    opacity: 1;
+}
