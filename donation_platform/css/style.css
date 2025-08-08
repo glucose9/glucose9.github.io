@@ -1,68 +1,130 @@
-body {
-    font-family: sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --light-gray: #ecf0f1;
+    --medium-gray: #bdc3c7;
+    --dark-gray: #7f8c8d;
+    --bg-color: #f4f7f6;
+    --card-bg-color: #ffffff;
+    --font-family: 'Noto Sans KR', sans-serif;
+    --box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --border-radius: 8px;
 }
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    margin: 0;
+    padding: 30px;
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+}
+
+/* --- Layout --- */
 .container {
     max-width: 800px;
     margin: auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-h1 {
-    color: #2c3e50;
-}
-#data-display {
-    margin-top: 20px;
-    padding: 15px;
-    background: #ecf0f1;
-    border-left: 5px solid #3498db;
-    text-align: left;
+    background: transparent; /* Container is now just for layout, not visuals */
+    padding: 0;
+    box-shadow: none;
 }
 
-/* Form Styling */
+/* --- Typography --- */
+h1 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.container > p {
+    text-align: center;
+    color: var(--dark-gray);
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* --- Card/Panel Styling --- */
+#data-display, #decision-panel {
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 25px;
+    border-left: none; /* Remove old border */
+}
+
+/* --- Form Styling --- */
 .portfolio-entry {
     display: flex;
-    margin-bottom: 10px;
+    gap: 15px; /* Use gap for spacing */
+    margin-bottom: 15px;
+    align-items: center;
 }
 
 .portfolio-entry input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
+    padding: 12px;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-family: var(--font-family);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-entry input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 .portfolio-entry .charity-name {
-    flex: 3; /* 자선단체 이름 필드가 더 많은 공간을 차지하도록 함 */
+    flex: 3;
 }
 
 .portfolio-entry .allocation {
     flex: 1;
 }
 
+/* --- Button Styling --- */
 #add-entry-btn, #submit-portfolio-btn {
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 1em;
+    font-weight: 500;
+    font-family: var(--font-family);
     margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 #add-entry-btn {
-    background-color: #2ecc71;
+    background-color: var(--success-color);
     color: white;
     margin-right: 10px;
 }
 
+#add-entry-btn:hover {
+    background-color: #27ae60; /* Darker green */
+    transform: translateY(-2px);
+}
+
 #submit-portfolio-btn {
-    background-color: #3498db;
+    background-color: var(--primary-color);
     color: white;
+}
+
+#submit-portfolio-btn:hover {
+    background-color: #2980b9; /* Darker blue */
+    transform: translateY(-2px);
 }
